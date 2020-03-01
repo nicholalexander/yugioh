@@ -1,15 +1,18 @@
-<h1> {{ monster.name | uppercase }} </h1>
+<h1> ALL MONSTERS </h1>
 
-<h2>{{monster.name}} Details</h2>
-<div><span>id: </span>{{monster.id}}</div>
-<div><span>name: </span>{{monster.name}}</div>
-<div><span>attack: </span>{{monster.attack}}</div>
-<div><span>defense: </span>{{monster.defense}}</div>
+<ul class="monsters">
+    <li *ngFor="let monster of monsters" (click)="onSelect(monster)">
+        <span class="badge">{{monster.id}}</span> {{monster.name}}
+    </li>
+</ul>
 
-<br>
 
-<div>
-    <label>name:
-        <input [(ngModel)]="monster.name" placeholder="name"/>
-    </label>
+<div *ngIf="selectedMonster">
+
+    <h2>{{selectedMonster.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedMonster.id}}</div>
+    <div><span>name: </span>{{selectedMonster.name}}</div>
+    <div><span>attack: </span>{{selectedMonster.attack}}</div>
+    <div><span>defense: </span>{{selectedMonster.defense}}</div>
+
 </div>
