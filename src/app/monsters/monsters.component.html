@@ -11,12 +11,4 @@
 </ul>
 
 
-<div *ngIf="selectedMonster">
-
-    <h2>{{selectedMonster.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedMonster.id}}</div>
-    <div><span>name: </span>{{selectedMonster.name}}</div>
-    <div><span>attack: </span>{{selectedMonster.attack}}</div>
-    <div><span>defense: </span>{{selectedMonster.defense}}</div>
-
-</div>
+<app-monster-detail [monster]="selectedMonster"></app-monster-detail>
