@@ -1,8 +1,12 @@
 <h1> ALL MONSTERS </h1>
 
 <ul class="monsters">
-    <li *ngFor="let monster of monsters" (click)="onSelect(monster)">
-        <span class="badge">{{monster.id}}</span> {{monster.name}}
+    <li 
+        *ngFor="let monster of monsters" 
+        (click)="onSelect(monster)" 
+        [class.selected]="monster === selectedMonster">
+        
+            <span class="badge">{{monster.id}}</span> {{monster.name}}
     </li>
 </ul>
 
